@@ -20,5 +20,8 @@ export class ApiService {
    vehicleRegisterAPI (vehicle:any) {
     return this.http.post(`${this.serverURL}/register/vehicle`,vehicle)
    }
+   getVehiclesAPI () {
+    return this.http.get(`${this.serverURL}/view/vehicles`)
+   }
 }
 

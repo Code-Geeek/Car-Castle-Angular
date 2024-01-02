@@ -1,0 +1,10 @@
+.contact{
+    display: flex;
+    justify-content: space-evenly;
+    
+}
+@media (max-width:500px){
+    .contact{
+        flex-wrap: wrap; 
+    }
+}

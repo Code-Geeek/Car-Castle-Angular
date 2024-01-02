@@ -1,0 +1,24 @@
+
+
+.smfoott{
+    display: none;
+}
+.smfoot{
+    display: flex;
+    justify-content: space-evenly;
+}
+.smfoot a{
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+    font-weight: 600;
+}
+@media (max-width:500px){
+    .lgfoot{
+        display: none;
+    }
+    .smfoott{
+        display: flex;
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,11 @@
+.visreg{
+    display: none;
+}
+@media (max-width:500px){
+    .hidreg{
+        display: none;
+    }
+    .visreg{
+        display: flex;
+    }
+}

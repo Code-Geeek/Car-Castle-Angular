@@ -19,3 +19,12 @@
     height: 70px;
     border-radius: 20px;
 }
+@media (max-width:500px){
+    .visible-booking{
+        margin: 20px;
+        margin-top: 30px;
+        border-radius: 40px;
+        height: auto;
+        width: auto;
+    }
+}

@@ -1,0 +1,12 @@
+
+.reslogin{
+    display: none;
+}
+@media (max-width:500px){
+    .logindiv{
+        display: none;
+    }
+    .reslogin{
+        display: flex;
+    }
+}

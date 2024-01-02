@@ -43,13 +43,16 @@
       <div class="modal-content">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="exampleModalLabel">Hatchback</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" (click)="closeVehiclemodal()" id="hatchClose" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body text-center">
           <form [formGroup]="vehicleForm" (ngSubmit)="registerHatchback()" >
             <label>
-                <input class="form-control" formControlName="image" (change)="getFile($event)" type="file" style="display: none;">
-                <img style="width: 250px;" src="https://static.vecteezy.com/system/resources/previews/023/146/103/non_2x/hatchback-car-icon-illustration-of-hatchback-car-vehicle-icon-of-crossover-car-for-design-regarding-transportation-automotive-and-automobile-silhouette-of-hatchback-vehicle-free-vector.jpg" alt="">
+                <input class="form-control" (change)="getFile($event)" type="file" style="display: none;">
+                <img *ngIf="vehicleImage" style="width: 250px;" [src]= vehicleImage alt="">
+
+                <img *ngIf="!vehicleImage" style="width: 250px;" src="https://static.vecteezy.com/system/resources/previews/023/146/103/non_2x/hatchback-car-icon-illustration-of-hatchback-car-vehicle-icon-of-crossover-car-for-design-regarding-transportation-automotive-and-automobile-silhouette-of-hatchback-vehicle-free-vector.jpg" alt="">
+
                 <p>Click here to upload vehicle image</p>
             </label>          
             <input style="text-transform: uppercase;" formControlName="modelname" class="form-control mb-3" type="text" placeholder=" Model Name">
@@ -82,13 +85,15 @@
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="staticBackdropLabel">Sedan</h1>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <button type="button" id="sedanClose" (click)="closeVehiclemodal()" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body text-center">
         <form [formGroup]="vehicleForm" (ngSubmit)="registerSedan()" >
           <label>
-              <input class="form-control" formControlName="image" (change)="getFile($event)" type="file" style="display: none;">
-              <img style="width: 250px;" src="https://cdn.pixabay.com/photo/2012/04/15/22/09/car-35502_1280.png" alt="">
+              <input class="form-control" (change)="getFile($event)" type="file" style="display: none;">
+              <img *ngIf="vehicleImage" style="width: 250px;" [src]=vehicleImage alt="">
+
+              <img *ngIf="!vehicleImage" style="width: 250px;" src="https://cdn.pixabay.com/photo/2012/04/15/22/09/car-35502_1280.png" alt="">
               <p>Click here to upload vehicle image</p>
           </label>          
           <input style="text-transform: uppercase;" formControlName="modelname" class="form-control mb-3" type="text" placeholder=" Model Name">
@@ -120,13 +125,15 @@
       <div class="modal-content">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="exampleModalLabel">SUV</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" (click)="closeVehiclemodal()" id="suvClose" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body text-center">
           <form [formGroup]="vehicleForm" (ngSubmit)="registerSuv()" >
             <label>
-                <input class="form-control" formControlName="image" (change)="getFile($event)" type="file" style="display: none;">
-                <img style="width: 250px;" src="https://i.pinimg.com/564x/0d/32/b7/0d32b7eb31d098eec55801c38021311c.jpg" alt="">
+                <input class="form-control" (change)="getFile($event)" type="file" style="display: none;">
+                <img *ngIf="vehicleImage" style="width: 250px;" [src]=vehicleImage alt="">
+
+                <img *ngIf="!vehicleImage" style="width: 250px;" src="https://i.pinimg.com/564x/0d/32/b7/0d32b7eb31d098eec55801c38021311c.jpg" alt="">
                 <p>Click here to upload vehicle image</p>
             </label>          
             <input style="text-transform: uppercase;" formControlName="modelname" class="form-control mb-3" type="text" placeholder=" Model Name">
@@ -149,29 +156,27 @@
               <button type="submit" class="btn btn-warning">Register</button>
           </form>
         </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
-        </div>
       </div>
     </div>
   </div>
-   <!-- sedan -->
+   <!-- luxury -->
    <div class="modal fade custom-modal" id="luxury" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog  modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
           <h1 class="modal-title fs-5" id="exampleModalLabel">Luxury Cars</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" (click)="closeVehiclemodal()" id="luxuryClose" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
           <div class="modal-body text-center">
             <form [formGroup]="vehicleForm" (ngSubmit)="registerLuxury()" >
               <label>
-                  <input class="form-control" formControlName="image" (change)="getFile($event)" type="file" style="display: none;">
-                  <img style="width: 250px;" src=" https://img.freepik.com/premium-vector/black-white-sports-car-supercar-vector-illustration_726947-138.jpg?size=626&ext=jpg&ga=GA1.1.1826414947.1703030400&semt=ais" alt="">
+                  <input class="form-control" (change)="getFile($event)" type="file" style="display: none;">
+                  <img *ngIf="vehicleImage" style="width: 250px;" [src]=vehicleImage alt="">
+
+              <img *ngIf="!vehicleImage" style="width: 250px;" src="https://img.freepik.com/premium-vector/black-white-sports-car-supercar-vector-illustration_726947-138.jpg?size=626&ext=jpg&ga=GA1.1.1826414947.1703030400&semt=ais" alt="">
                   <p>Click here to upload vehicle image</p>
-              </label>          
+              </label>            
               <input style="text-transform: uppercase;" formControlName="modelname" class="form-control mb-3" type="text" placeholder=" Model Name">
                 <input style="text-transform: uppercase;" formControlName="regnumber" class="form-control mb-3" type="text" placeholder=" Vehicle Register Number">
                 <input style="text-transform: capitalize;"  formControlName="color" class="form-control mb-3" type="text" placeholder=" Vehicle Colour">
@@ -192,10 +197,6 @@
                 <button type="submit" class="btn btn-warning">Register</button>
             </form>
           </div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
         </div>
       </div>
     </div>

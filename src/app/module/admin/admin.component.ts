@@ -9,9 +9,8 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent {
-  image:any=""
+  vehicleImage:any=""
   vehicleForm = this.fb.group({
-    image:['',[Validators.required]],
     modelname: ['', [Validators.required]],
     regnumber: ['', [Validators.required]],
     color: ['', [Validators.required]],
@@ -20,9 +19,12 @@ export class AdminComponent {
     amount: ['', [Validators.required, Validators.pattern('[0-9]*')]],
   });
   constructor(private fb:FormBuilder,private api:ApiService,private router:Router) { }
+  closeVehiclemodal() {
+    this.vehicleImage=''
+  }
   registerHatchback() { 
     if (this.vehicleForm.valid) {
-      const image = this.vehicleForm.value.image;
+      const image = this.vehicleImage
       const modelname = this.vehicleForm.value.modelname;
       const regnumber = this.vehicleForm.value.regnumber;
       const color = this.vehicleForm.value.color;
@@ -36,6 +38,8 @@ export class AdminComponent {
       this.api.vehicleRegisterAPI(vehicle).subscribe({
         next: (res: any) => {
           console.log(res);
+          document.getElementById('hatchClose')?.click();
+          this.vehicleImage=' '
           alert(` Vehicle Registered successful !`);
           
           this.vehicleForm.reset();
@@ -57,14 +61,14 @@ export class AdminComponent {
     fr.readAsDataURL(file);
     fr.onload = (event: any) => {
       console.log(event.target.result);
-      this.vehicleForm.get('image')?.setValue(event.target.result);
+      this.vehicleImage=event.target.result
     };
   }
   // register sedan
 
   registerSedan() { 
     if (this.vehicleForm.valid) {
-      const image = this.vehicleForm.value.image;
+      const image = this.vehicleImage
       const modelname = this.vehicleForm.value.modelname;
       const regnumber = this.vehicleForm.value.regnumber;
       const color = this.vehicleForm.value.color;
@@ -78,6 +82,8 @@ export class AdminComponent {
       this.api.vehicleRegisterAPI(vehicle).subscribe({
         next: (res: any) => {
           console.log(res);
+          document.getElementById('sedanClose')?.click();
+          this.vehicleImage=' '
           alert(` Vehicle Registered successful !`);
           
           this.vehicleForm.reset();
@@ -98,8 +104,7 @@ export class AdminComponent {
     let fr = new FileReader();
     fr.readAsDataURL(file);
     fr.onload = (event: any) => {
-      console.log(event.target.result);
-      this.vehicleForm.get('image')?.setValue(event.target.result);
+      this.vehicleImage=event.target.result
     };
   }
 
@@ -107,7 +112,7 @@ export class AdminComponent {
 
   registerSuv() { 
     if (this.vehicleForm.valid) {
-      const image = this.vehicleForm.value.image;
+      const image = this.vehicleImage
       const modelname = this.vehicleForm.value.modelname;
       const regnumber = this.vehicleForm.value.regnumber;
       const color = this.vehicleForm.value.color;
@@ -121,6 +126,8 @@ export class AdminComponent {
       this.api.vehicleRegisterAPI(vehicle).subscribe({
         next: (res: any) => {
           console.log(res);
+          document.getElementById('suvClose')?.click();
+          this.vehicleImage=' '
           alert(` Vehicle Registered successful !`);
           
           this.vehicleForm.reset();
@@ -141,8 +148,7 @@ export class AdminComponent {
     let fr = new FileReader();
     fr.readAsDataURL(file);
     fr.onload = (event: any) => {
-      console.log(event.target.result);
-      this.vehicleForm.get('image')?.setValue(event.target.result);
+      this.vehicleImage=event.target.result
     };
   }
 
@@ -150,7 +156,7 @@ export class AdminComponent {
 
   registerLuxury() { 
     if (this.vehicleForm.valid) {
-      const image = this.vehicleForm.value.image;
+      const image = this.vehicleImage
       const modelname = this.vehicleForm.value.modelname;
       const regnumber = this.vehicleForm.value.regnumber;
       const color = this.vehicleForm.value.color;
@@ -164,6 +170,8 @@ export class AdminComponent {
       this.api.vehicleRegisterAPI(vehicle).subscribe({
         next: (res: any) => {
           console.log(res);
+          document.getElementById('luxuryClose')?.click();
+          this.vehicleImage=' '
           alert(` Vehicle Registered successful !`);
           
           this.vehicleForm.reset();
@@ -184,8 +192,7 @@ export class AdminComponent {
     let fr = new FileReader();
     fr.readAsDataURL(file);
     fr.onload = (event: any) => {
-      console.log(event.target.result);
-      this.vehicleForm.get('image')?.setValue(event.target.result);
+      this.vehicleImage=event.target.result
     };
   }
 }

@@ -1,9 +1,40 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary" style="height: 100px;">
     <div class="container">
       <a class="navbar-brand" href="#">Car Castle</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+      <div class="d-flex">
+        <div class="dropdown">
+          <button class=" navbar-toggler me-2 " type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <img class="img-fluid" style="width: 30px;" src="https://png.pngtree.com/png-clipart/20190520/original/pngtree-vector-users-icon-png-image_4144740.jpg" alt="">
+          </button>
+          <ul class="dropdown-menu dropnav usercontainer">
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item text-center" routerLink="/login">Login</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item text-center" routerLink="/register">Sign up</a></li>
+            <li><hr class="dropdown-divider"></li>
+          </ul>
+        </div>
+        <div class="dropdown">
+          <button class=" navbar-toggler" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <ul class="dropdown-menu dropnav container">
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item text-center" routerLink="/">Home</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item text-center" routerLink="/about-us">About Us</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item text-center" routerLink="contat-us">Contact Us</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item text-center" href="#">Settings</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item text-center" href="#">Deals</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item text-center" href="#">FAQs</a></li>
+            <li><hr class="dropdown-divider"></li>
+          </ul>
+        </div>
+      </div>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
           <li class="nav-item">
@@ -23,17 +54,15 @@
             </ul>
           </li>
           <li class="nav-item dropdown">
-            <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <a class="nav-link "  role="button" data-bs-toggle="dropdown" aria-expanded="false">
                 <i class="fa-solid fa-bars"></i>
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Home</a></li>
+              <li><a class="dropdown-item" routerLink="/">Home</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">About Us</a></li>
+              <li><a class="dropdown-item" routerLink="/about-us">About Us</a></li>
               <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Contact Us</a></li>
-              <li><hr class="dropdown-divider"></li>
-              <li><a class="dropdown-item" href="#">Settings</a></li>
+              <li><a class="dropdown-item" routerLink="contat-us">Contact Us</a></li>
             </ul>
           </li>
         </ul>

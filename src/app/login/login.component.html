@@ -6,12 +6,22 @@
             <h3 class="fw-100 mb-3">Login to <span class="text-warning">Car Castle</span></h3>
             <p>Don't have an account ? <a style="text-decoration: none;" routerLink="/register">Signup</a></p>
             <p>Forget password ? <a >Reset now</a></p>
-            <form>
+            <form [formGroup]="loginForm" (ngSubmit)="login()">
                 <div class="mb-3">
-                    <input style="height: 60px;" type="email" class="form-control w-50" placeholder="Email">
+                    <input style="height: 60px;" type="email" class="form-control w-50" placeholder="Email"formControlName="email">
+                </div>
+                <div class="mb-2 text-danger" *ngIf="
+                this.loginForm.get('email')?.errors &&
+                this.loginForm.get('email')?.touched">
+                  Invalid email
                 </div>
               <div class="mb-3">
-                <input style="height: 60px;" type="email" class="form-control w-50" placeholder="Password">
+                <input style="height: 60px;" type="password" class="form-control w-50" placeholder="Password" formControlName="password">
+            </div>
+            <div class="mb-2 text-danger" *ngIf="
+            this.loginForm.get('password')?.errors &&
+            this.loginForm.get('password')?.touched">
+              Invalid password
             </div>
             <button style="height: 60px;" class="btn btn-warning rounded w-50 text-light fw-bolder" type="submit">Login</button>
             <hr>
@@ -26,9 +36,10 @@
         <div style="width: 40%;height: 100%;background-position: center; background-size: contain; background-image: url(https://images.pexels.com/photos/4572176/pexels-photo-4572176.jpeg);"></div>
         <div style="position: absolute; top: 25px; right: 30px">
           <div routerLink="user/cart">
-            <i class="fa-solid fa-xmark text-muted fa-xl"></i>
+            <!-- <i class="fa-solid fa-xmark text-muted fa-xl"></i> -->
           </div>
         </div>
       </div>
     </div>
 </div>
+

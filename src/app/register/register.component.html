@@ -10,17 +10,23 @@
                 <div style="width: 60px; height: 50px; box-shadow: 10px;" class="btn border rounded me-3"><img style="width: 35px;height: 35px;" src="https://www.freepnglogos.com/uploads/512x512-logo/512x512-transparent-logo-download-instagram-logo-icon-png-transparent-image-11.png" alt=""></div>
             </div>
             <hr>
-            <form class="container">
+            <form class="container" [formGroup]="registerForm" (ngSubmit)="register()" >
                 <div class="mb-3 d-flex ">
-                    <input style="height: 60px;" type="text" class="form-control w-50 me-4" placeholder="Name">
-                    <input style="height: 60px;" type="text" class="form-control w-50" placeholder="Mobile">
+                    <input style="height: 60px;" type="text" class="form-control w-50 me-4" placeholder="Name" formControlName="name">
+                    <input style="height: 60px;" type="text" class="form-control w-50" placeholder="Mobile" formControlName="mobile">
                 </div>
+                <div class="mb-3 d-flex justify-content-between ">
+                  <div class="text-danger" *ngIf=" this.registerForm.get('name')?.errors && this.registerForm.get('name')?.touched"> Invalid name</div>
+                  <div class="text-danger" *ngIf=" this.registerForm.get('mobile')?.errors && this.registerForm.get('mobile')?.touched"> Inavlid mobile</div>
+              </div>
               <div class="mb-3">
-                <input style="height: 60px;" type="email" class="form-control" placeholder="Email">
+                <input style="height: 60px;" type="email" class="form-control" placeholder="Email" formControlName="email">
             </div>
+            <div class="text-danger" *ngIf=" this.registerForm.get('email')?.errors && this.registerForm.get('email')?.touched"> Inavlid Email</div>
             <div class="mb-3">
-                <input style="height: 60px;" type="password" class="form-control" placeholder="Password">
+                <input style="height: 60px;" type="password" class="form-control" placeholder="Password" formControlName="password">
             </div>
+            <div class="text-danger" *ngIf=" this.registerForm.get('password')?.errors && this.registerForm.get('password')?.touched"> Inavlid password</div>
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                 <label style="font-size: 10px;" class="form-check-label mb-2" for="flexCheckDefault">

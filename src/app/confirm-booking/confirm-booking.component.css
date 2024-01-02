@@ -1,0 +1,43 @@
+.fromto{
+    border: 2px solid #ffc107;
+    border-radius: 40px;
+    height: 130px;
+    align-items: center;
+}
+.choosebanner{
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+}
+.plan-car{
+    width: 380px;
+    height: 500px;
+    border-radius: 20px;
+}
+.plans{
+    width: 380px;
+    height: 450px;
+    border-radius: 20px;
+    background-color: #e4f5ff;
+    border: 2px solid rgb(188, 188, 188);
+}
+.plansp{
+    width: 380px;
+    height: 450px;
+    border-radius: 20px;
+    background-color: #d5ffd8;
+    border: 2px solid rgb(188, 188, 188);
+}
+.planbtn{
+    width: 288px;
+    height: 60px;
+    font-size: 30px;
+    background-color: #88ff90;
+}
+.planbtn1{
+    width: 288px;
+    height: 60px;
+    font-size: 30px;
+    background-color: #83d2ff;
+}

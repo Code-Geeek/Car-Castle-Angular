@@ -1,0 +1,8 @@
+.custom-modal .modal-dialog {
+    max-width: 570px;
+    margin: auto;
+  }
+  .form-control:focus{
+    border: 1px solid black;
+    box-shadow: none;
+  }

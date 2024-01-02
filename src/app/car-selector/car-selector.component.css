@@ -1,0 +1,59 @@
+.car-selector{
+    margin-top: -50px;
+    background-color: rgb(228, 228, 228);
+}
+li{
+    float: left;
+    margin-left: 55px;
+    color: rgb(157, 157, 157);
+
+}
+li:hover{
+    color: black;
+    text-decoration: underline;
+}
+li a {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    
+  }
+  .from{
+    margin-bottom: 200px;
+  }
+.from img{
+    width: 350px;
+    border-radius: 50px;
+    position: absolute;
+}
+.to{
+    margin-bottom: 200px;
+  }
+.to img{
+    width: 350px;
+    border-radius: 50px;
+    position: absolute;
+}
+.from p{
+    margin-left: 60px;
+    margin-top: 41px;
+    position: relative;
+}
+.from h5{
+    margin-left: 60px;
+    margin-top: 31px;
+    position: relative;
+    text-shadow: 2px 2px 7px;
+}
+.to p{
+    margin-left: 60px;
+    margin-top: 41px;
+    position: relative;
+}
+.to h5{
+    margin-left: 60px;
+    margin-top: 31px;
+    position: relative;
+    text-shadow: 2px 2px 7px;
+}
+

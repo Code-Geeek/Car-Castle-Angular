@@ -22,12 +22,9 @@ export class LoginComponent {
       const user = { email, password };
       this.api.loginAPI(user).subscribe({
         next: (res: any) => {
-          console.log(res);
           alert(`${res.existingUser.name} login successful !`);
           sessionStorage.setItem('name', res.existingUser.name);
-          sessionStorage.setItem('token', res.token);
-          console.log(res);
-          
+          sessionStorage.setItem('token', res.token);          
           if(res.existingUser.type==="admin"){
             this.router.navigateByUrl('/admin/dashboard');
           }else{

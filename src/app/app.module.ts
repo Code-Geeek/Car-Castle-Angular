@@ -11,12 +11,13 @@ import { RegisterComponent } from './register/register.component';
 import { BookingComponent } from './booking/booking.component';
 import { CarSelectorComponent } from './car-selector/car-selector.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { CarsComponent } from './cars/cars.component';
 import { ConfirmBookingComponent } from './confirm-booking/confirm-booking.component';
 import { PaymentPageComponent } from './payment-page/payment-page.component';
 import { AboutPageComponent } from './about-page/about-page.component';
 import { ContactpageComponent } from './contactpage/contactpage.component';
+import { NgxPayPalModule } from 'ngx-paypal';
 
 
 @NgModule({
@@ -40,7 +41,9 @@ import { ContactpageComponent } from './contactpage/contactpage.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxPayPalModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

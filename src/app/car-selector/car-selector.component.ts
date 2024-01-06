@@ -8,5 +8,4 @@ import { Component } from '@angular/core';
 export class CarSelectorComponent {
   pickup:any= sessionStorage.getItem('pickup')
   drop:any= sessionStorage.getItem('drop')
-
 }

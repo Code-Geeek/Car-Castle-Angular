@@ -1,22 +1,28 @@
-
-.visible-booking{
-    border-radius: 40px;
-    height: 470px;
-    width: 500px;
-    border: 1px solid rgb(186, 186, 186);
+.home{
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.inputbox{
+  border-radius: 50px;
 }
 .form-select{
-    height: 70px;
-    border-radius: 20px;
+    height: 55px;
+  border-radius: 30px;
 }
 .date{
-    border: 1px solid rgb(203, 203, 203);
-    width: 200px;
-    height: 70px;
-    border-radius: 20px;
-
+    
+    height: 55px;
+    border-radius: 30px;
 }
 .searchbtn{
-    height: 70px;
-    border-radius: 20px;
+    height: 55px;
+    border-radius: 30px;
+}
+
+.carousel-item{
+    width: 100%;
+}
+.carousel-item img{
+    width: 100%;
+    height: 100%;
 }
